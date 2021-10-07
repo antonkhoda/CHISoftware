@@ -1,0 +1,119 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333d45;
+  font-size: 17px;
+}
+
+.wrap {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.loanBlock {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #d4d4d4;
+  background-color: #f5f5f5;
+}
+
+.loanBlock h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.loanBlockInterface p {
+  margin: 0;
+}
+
+input[type="button"] {
+  width: 100px;
+  padding: 10px;
+  background-color: #ffea00;
+  border: 1px solid #d4d4d4;
+  border-radius: 3px;
+}
+
+.r-side input[type="button"] {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.loanBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.loanBlock h3 {
+  color: green;
+  font-weight: lighter;
+  text-align: end;
+}
+
+.r-side {
+  min-width: 100px;
+  position: relative;
+}
+
+.dialog-bg {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.192);
+}
+
+.dialog {
+  position: relative;
+  z-index: 200;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.dialog input[type="number"] {
+  width: 100%;
+  height: 42px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  border: 1px solid #d4d4d4;
+  border-radius: 3px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]:focus {
+  outline: none;
+}
+
+.dialog div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.amount {
+  text-align: center;
+}
+
+.amount span {
+  font-weight: bold;
+}

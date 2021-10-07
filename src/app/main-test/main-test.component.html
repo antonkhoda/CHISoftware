@@ -1,0 +1,42 @@
+<div class="wrap">
+  <h1>Current Loans</h1>
+  <div class="loansList" *ngFor="let loans of allLoans">
+    <div class="loanBlock">
+      <div>
+        <div class="loanBlockInterface">
+          <h2>{{ loans.title }}</h2>
+          <p>Tranche class: {{ loans.tranche }}</p>
+          <p>Amount available: {{ loans.available | number }}</p>
+          <p>Annualised return: {{ loans.annualised_return }}</p>
+          <p>LTV: {{ loans.ltv }}</p>
+          <p>Amount: {{ loans.amount | floatPoint }}</p>
+        </div>
+      </div>
+      <div class="r-side">
+        <h3 *ngIf="loans.invested">Invested</h3>
+        <input type="button" value="INVEST" (click)="showLoans(loans)" />
+      </div>
+    </div>
+  </div>
+  <div class="amount">
+    Total amount available for investments:
+    <span>{{ availablePersonAmount | currency: "GBP" }}</span>
+  </div>
+</div>
+
+<div class="dialog-bg" *ngIf="dialogWin">
+  <div class="dialog">
+    <h1>Invest in Loan</h1>
+    <div *ngFor="let l of targetLoan; index as i">
+      <p>{{ l.title }}</p>
+      <p>Amount available: {{ l.available | number }}</p>
+      <p>Loan ends in: {{ l.term_remaining | time }}</p>
+      <p>Investment amount (&#163;)</p>
+    </div>
+    <div>
+      <input type="number" [(ngModel)]="inputValue" />
+      <input type="button" value="INVEST" (click)="investLoans()" />
+      <input type="button" value="CLOSE" (click)="dialogWinChangeStatus()" />
+    </div>
+  </div>
+</div>
